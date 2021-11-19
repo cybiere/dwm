@@ -13,8 +13,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int horizpadbar        = 10;        /* horizontal padding for statusbar */
 static const int vertpadbar         = 10;        /* vertical padding for statusbar */
-static const int vertpad            = 10;       /* vertical padding of bar */
-static const int sidepad            = 10;       /* horizontal padding of bar */
+static const int vertpad            = 5;       /* vertical padding of bar */
+static const int sidepad            = 5;       /* horizontal padding of bar */
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
@@ -27,10 +27,12 @@ static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_orange,  col_orange  },
+	[SchemeTagNorm] = { col_gray2, col_gray1, col_gray2 },
+	[SchemeTagSel] = { col_orange, col_gray1, col_gray2 },
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -116,9 +118,6 @@ static Key keys[] = {
 	TAGKEYS(                        XK_apostrophe,             3)
 	TAGKEYS(                        XK_parenleft,              4)
 	TAGKEYS(                        XK_minus,                  5)
-	TAGKEYS(                        XK_egrave,                 6)
-	TAGKEYS(                        XK_underscore,             7)
-	TAGKEYS(                        XK_ccedilla,               8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
